@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Post Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 50px;
+      padding: 20px;
+      display: flex;
+    }
+
+    .container {
+      flex: 1;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="time"] {
+      width: 300px;
+      padding: 5px;
+      font-size: 16px;
+    }
+
+    .button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .button:hover {
+      background-color: #45a049;
+    }
+
+    .driver-image {
+      flex: 1;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .driver-image img {
+      width: 400px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="content">
+    <!-- Content goes here -->
+  </div>
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Arsha
+  * Updated: Mar 10 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><img src="assets/img/IMG-1.png"><a href="index.html">Expats Hub</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
+       
+          <li><a class="nav-link scrollto" href="Rider.html">Rider</a></li>
+          <li><a class="nav-link scrollto" href="Passen.html">Book a ride</a></li>
+          
+          <!--  <li class="dropdown"><a href="#"><span>Rules & Regulation</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li> -->
+         
+          <li><a class="nav-link scrollto" href="#contact">
+              <input type="text" class="form-control pl-3" placeholder="Search">
+            </a>
+
+          </li>
+          <li class="dropdown"><a href="#"><span>Login</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="loginpage.html">Login</a></li>
+              <li><a href="loginpage.html">User Name</a></li>
+              <li><a href="#">Register</a></li>
+              <li><a href="#">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+  <style>
+    .v {
+      margin-top: 80px; /* Adjust the value as needed */
+    }
+  </style>
+  <div class="v">
+    <h1>Post a Ride</h1>
+
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required><br><br>
+      <label for="number">MobileNumber:</label>
+      <input type="text" id="number" name="number" required><br><br>
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required><br><br>
+
+      <label for="time">Time:</label>
+      <input type="time" id="time" name="time" required><br><br>
+
+      <label for="pickup">From:</label>
+      <input type="text" id="pickup" name="pickup" required><br><br>
+
+      <label for="drop">To:</label>
+      <input type="text" id="drop" name="drop" required><br><br>
+
+      <input type="button" value="Post Now" onclick="post()" class="button">
+    </form>
+  </div>
+
+  <div class="driver-image">
+    <img src="Rider.jpg" alt="Ride">
+  </div>
+
+  <script>
+    function post() {
+      // Retrieve the values entered by the user
+      var name = document.getElementById('name').value;
+      var date = document.getElementById('date').value;
+      var time = document.getElementById('time').value;
+      var pickup = document.getElementById('pickup').value;
+      var drop = document.getElementById('drop').value;
+
+      // Perform any posting logic here
+      // For this example, we'll just display an alert with the details
+      alert("Driver: " + name +
+        "\nDate: " + date +
+        "\nTime: " + time +
+        "\nPickup Location: " + pickup +
+        "\nDrop Location: " + drop);
+    }
+  </script>
+</body>
+</html>

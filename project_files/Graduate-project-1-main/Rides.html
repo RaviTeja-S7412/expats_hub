@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rides</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .button-container .button {
+      background-color: white;
+      color: black;
+      border: none;
+      padding: 15px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 0 10px;
+    }
+
+    .button-container .button:hover {
+      background-color: white;
+    }
+
+    .button-container .divider {
+      display: inline-block;
+      border-left: 1px solid black;
+      height: 300px;
+      margin: 0 10px;
+      vertical-align: middle;
+    }
+
+    .content {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <style>
+    .content {
+      margin-top: 70px; /* Adjust the value as needed */
+    }
+  </style>
+  <div class="content">
+    <h1>Rides</h1>
+  </div>
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Arsha
+  * Updated: Mar 10 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><img src="assets/img/IMG-1.png"><a href="index.html">Expats Hub</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
+       
+          <li><a class="nav-link scrollto" href="Rider.html">Post a ride</a></li>
+          <li><a class="nav-link scrollto" href="Passen.html">Book a ride</a></li>
+          
+          <!--  <li class="dropdown"><a href="#"><span>Rules & Regulation</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li> -->
+         
+            <li><a class="nav-link scrollto" href="#contact">
+              <input type="text" class="form-control pl-3" placeholder="Search">
+            </a>
+
+          </li>
+          <li class="dropdown"><a href="#"><span>Login</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="loginpage.html">Login</a></li>
+              <li><a href="loginpage.html">User Name</a></li>
+              <li><a href="#">Register</a></li>
+              <li><a href="#">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+  
+
+  <div class="button-container">
+    <button class="button" onclick="giveARide()">  <img class="button-icon" src="Driver1.jpg" height="150" alt="Give a Ride Icon" ><div class="= "image-text">POST A RIDE</div>
+        </button>
+    <span class="divider"></span>
+    <button class="button" onclick="wantARide()"> <img class="button-icon" src="pass.jpg" height="150" alt="Want a Ride Icon" ><div class="= "image-text">BOOK A RIDE</div>
+        </button>
+  </div>
+
+  <div id="giveRideContent" class="content" style="display: none;">
+    <h2>POST A RIDE</h2>
+    <p>If you have a vehicle and want to provide rides to others, click the button below.</p>
+    <button class="button" onclick="goToGiveRidePage()">Post a Ride</button>
+  </div>
+
+  <div id="wantRideContent" class="content" style="display: none;">
+    <h2>BOOK A RIDE</h2>
+    <p>If you need a ride and want to find available rides, click the button below.</p>
+    <button class="button" onclick="goToWantRidePage()">Find a Ride</button>
+  </div>
+
+  <script>
+    function giveARide() {
+      document.getElementById("giveRideContent").style.display = "block";
+      document.getElementById("wantRideContent").style.display = "none";
+    }
+
+    function wantARide() {
+      document.getElementById("giveRideContent").style.display = "none";
+      document.getElementById("wantRideContent").style.display = "block";
+    }
+
+    function goToGiveRidePage() {
+      window.location.href = "Rider.html";
+    }
+
+    function goToWantRidePage() {
+      window.location.href = "Passen.html";
+    }
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Property Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .property-details {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .property-details h2 {
+      margin-bottom: 20px;
+    }
+
+    .property-details p {
+      margin-bottom: 10px;
+    }
+
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .image-gallery img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="property-details">
+    <h2>Property Details</h2>
+    <p><strong>Title:</strong> <span id="title"></span></p>
+    <p><strong>Description:</strong> <span id="description"></span></p>
+    <p><strong>Price:</strong> <span id="price"></span></p>
+    <p><strong>Bedrooms:</strong> <span id="bedrooms"></span></p>
+    <p><strong>Bathrooms:</strong> <span id="bathrooms"></span></p>
+    <p><strong>Property Type:</strong> <span id="property-type"></span></p>
+    <p><strong>Availability for:</strong> <span id="availability"></span></p>
+    <div class="image-gallery" id="image-gallery"></div>
+  </div>
+
+  <script>
+    // Sample property data
+    var propertyData = {
+      title: 'Beautiful House',
+      description: 'Spacious house with garden',
+      price: 250000,
+      bedrooms: 3,
+      bathrooms: 2,
+      propertyType: 'House',
+      availability: '4',
+      images: [
+        'https://www.bhg.com/thmb/H9VV9JNnKl-H1faFXnPlQfNprYw=/1799x0/filters:no_upscale():strip_icc()/white-modern-house-curved-patio-archway-c0a4a3b3-aa51b24d14d0464ea15d36e05aa85ac9.jpg',
+        'https://images.unsplash.com/photo-1593696140826-c58b021acf8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGhvdXNlJTIwaW50ZXJpb3J8ZW58MHx8MHx8&w=1000&q=80',
+        'https://media.architecturaldigest.com/photos/5eac5fa22105f13b72dede45/master/w_1600%2Cc_limit/111LexowAve_Aug18-1074.jpg'
+      ]
+    };
+
+    // Populate the property details
+    document.getElementById('title').textContent = propertyData.title;
+    document.getElementById('description').textContent = propertyData.description;
+    document.getElementById('price').textContent = propertyData.price;
+    document.getElementById('bedrooms').textContent = propertyData.bedrooms;
+    document.getElementById('bathrooms').textContent = propertyData.bathrooms;
+    document.getElementById('property-type').textContent = propertyData.propertyType;
+    document.getElementById('availability').textContent = propertyData.availability;
+
+    // Populate the image gallery
+    var imageGallery = document.getElementById('image-gallery');
+
+    for (var i = 0; i < propertyData.images.length; i++) {
+      var imageElement = document.createElement('img');
+      imageElement.src = propertyData.images[i];
+      imageGallery.appendChild(imageElement);
+    }
+  </script>
+</body>
+</html>
