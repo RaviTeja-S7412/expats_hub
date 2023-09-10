@@ -74,7 +74,7 @@
         '<img src="' . base_url()."/".$img[0] . '" alt="Listing Image" width="100" height="100">' .
         '<h3>' . $li['title'] . '</h3>' .
         '<p><strong>Bedrooms:</strong> ' . $li['bedrooms'] . '</p>' .
-        '<a href='.base_url().'home/ViewListing?id='.$li['id'].'>View More</a>' .
+        '<a href="'.base_url().'home/ViewListing?id='.$li['id'].'||">View More</a>' .
         '</div>';
         // '.<?=base_url()."home/ViewListing.php?id='.$li['id'].'"
         // <button type="button" id="ViewListing" class="ViewListing btn btn-info" lid='.$li['id'].'>View More</button>' .

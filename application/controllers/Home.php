@@ -21,7 +21,16 @@ class Home extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('index');
+		$query = $this->db->query("SELECT * FROM `tbl_accomodations` where status ='1'");
+		$data['accomodations'] = $query->result_array();
+
+		$query1 = $this->db->query("SELECT * FROM `tbl_ride` where status ='1'");
+		$data['ride'] = $query1->result_array();
+
+		$query2 = $this->db->query("SELECT * FROM `tbl_ride_book` where status ='1'");
+		$data['ride_book'] = $query2->result_array();
+
+		$this->load->view('index',$data);
 	}
 
 
@@ -97,11 +106,20 @@ class Home extends CI_Controller {
 
 	public function ViewListing()
 	{
-		$query = $this->db->query("SELECT * FROM `tbl_accomodations` where id= ".$_GET['id']."");
-		$data['list'] = $query->result_array();
+		$i = explode("||", $_GET['id']);
+		if($i[1] == ""){
+			$tbl = "tbl_accomodations";
+		}else if($i[1] == "1"){
+			$tbl = "tbl_ride";
+		}
+		else if($i[1] == "2"){
+			$tbl = "tbl_ride_book";
+		}
 
+		$query = $this->db->query("SELECT * FROM ".$tbl." where id= ".$i[0]." AND status ='1'");
+		$data['list'] = $query->result_array();
+		$data['tbl'] = $i[1];
 		$res = $this->load->view('ViewListing', $data);
-		
 	}
 
 	public function post_listing()

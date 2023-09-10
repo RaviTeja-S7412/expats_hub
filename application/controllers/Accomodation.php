@@ -3,16 +3,20 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Accomodation extends CI_Controller
 {
-
 	public function insertAccomodation()
 	{
+
+		// echo '<pre>';
+		// print_r($_FILES);
+		// exit;
+
 		$multiImg = [];
 		$this->load->library('upload');
 
 		if ($_FILES["files"]["name"] != '') {
 			$output = '';
 			$config2["upload_path"] = 'uploads/accomodation/';
-			$config2["allowed_types"] = 'jpg|jpeg|png';
+			$config2["allowed_types"] = 'jpg|jpeg|png|mp4';
 
 			$config["encrypt_name"] = TRUE;
 			$this->upload->initialize($config2);
@@ -31,6 +35,28 @@ class Accomodation extends CI_Controller
 			}
 		}
 
+
+
+		if ($_FILES["video"]["name"] != '') {
+			$output = '';
+			$config2["upload_path"] = 'uploads/accomodation/';
+			$config2["allowed_types"] = 'mp4';
+
+			$config["encrypt_name"] = TRUE;
+			$this->upload->initialize($config2);
+
+			$_FILES["file"]["name"] = $_FILES["video"]["name"];
+			$_FILES["file"]["type"] = $_FILES["video"]["type"];
+			$_FILES["file"]["tmp_name"] = $_FILES["video"]["tmp_name"];
+			$_FILES["file"]["error"] = $_FILES["video"]["error"];
+			$_FILES["file"]["size"] = $_FILES["video"]["size"];
+
+			if ($this->upload->do_upload('file')) {
+				$data = $this->upload->data();
+				$video = 'uploads/accomodation/' . $data["file_name"];
+			}
+		}
+
 		$data = [
 			"title" => $this->input->post('title'),
 			"description" => $this->input->post('description'),
@@ -43,6 +69,8 @@ class Accomodation extends CI_Controller
 			"contact_number" => $this->input->post('contact_number'),
 			// "images" => json_encode($multiImg),
 			"images" => $multiImg,
+			"video" => $video,
+			"status" => "1",
 			"created_date" => date("Y-m-d H:i:s")
 		];
 

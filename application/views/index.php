@@ -166,11 +166,13 @@
                       class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                   <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
                     <p>
-
-                      <a href="#" class="aaa"> <strong> *</strong> 3 BHk Available in Forest Cove Apartments </a> <br>
-                      <a href="#" class="aaa"> <strong> *</strong> 2 BHK Available in Village or Apartments </a> <br>
-                      <a href="#" class="aaa"> <strong> *</strong> 1 BHK Available in parkway Terras </a>
-
+                    <?php if(!empty($accomodations)){ 
+                      foreach($accomodations as $dt){?>
+                        <a href="<?php echo base_url()."home/ViewListing?id=".$dt['id']."||";?>" class="aaa"> <strong> *</strong> <?php echo $dt['title'];?></a> <br>
+                        <?php }}else{?>
+                          No Posting Yet.
+                        <?php }?>
+                   
                     </p>
                   </div>
                 </li>
@@ -181,13 +183,20 @@
                       class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                   <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
                     <p>
-                      <a href="#" class="aaa"> <strong> *</strong> Ride available to maryville </a><br>
-                      <a href="#" class="aaa"> <strong> *</strong> Ride available to kansas </a><br>
-                      <a href="#" class="aaa"> <strong> *</strong> Ride available to Pareway </a><br>
-                      <a href="#" class="aaa"> <strong> *</strong> Need Ride to maryville </a><br>
-                      <a href="#" class="aaa"> <strong> *</strong> Need Ride to Kansas </a><br>
-                      <a href="#" class="aaa"> <strong> *</strong> Need Car for --- </a><br>
-                      <a href="#" class="aaa"> <strong> *</strong> Need car travels </a>
+                      
+                      <?php if(!empty($ride)){ 
+                      foreach($ride as $dt){?>
+                        <a href="<?php echo base_url()."home/ViewListing?id=".$dt['id']."||1";?>" class="aaa"> <strong> *</strong> Ride available to <?php echo $dt['drop'];?> </a><br>
+                      <?php }}else{?>
+                        No Ride available.
+                      <?php }?>
+
+                      <?php if(!empty($ride_book)){ 
+                      foreach($ride_book as $dt){?>
+                        <a href="<?php echo base_url()."home/ViewListing?id=".$dt['id']."||2";?>"  class="aaa"> <strong> *</strong> Need Ride to <?php echo $dt['drop'];?> </a><br>
+                      <?php }}else{?>
+                        No Ride Booked.
+                      <?php }?>
                     </p>
                   </div>
                 </li>

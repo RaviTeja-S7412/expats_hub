@@ -126,16 +126,20 @@
         <input type="text" id="contact" name="contact_number" required>
       </div>
         <div class="form-group">
-          <label for="photos">Photos:</label>
+          <label for="photos">Upload Photos:</label>
           <input type="file" id="photos" name="files[]" multiple required>
+        </div>
+        <div class="form-group">
+          <label for="photos">Upload Video:</label>
+          <input type="file" id="" name="video" required>
         </div>
       <input type="submit" value="Submit" class="submit-button" style="margin-bottom: 40px;">
     </form>
   </div>
-     <!-- ======= Footer ======= -->
-     <? $this->load->view('includes/footer') ?>
+    <!-- ======= Footer ======= -->
+    <? $this->load->view('includes/footer') ?>
 
-     <script>
+    <script>
 
     $("#insert").submit(function(e) {
       e.preventDefault();
@@ -146,6 +150,7 @@
         "data": fdata,
         "dataType": 'json',
         "success": function(data) {
+          alert(data)
           if (data.status == 200) {
             Swal.fire(
               'Success',
