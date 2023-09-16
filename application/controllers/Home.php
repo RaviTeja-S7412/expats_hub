@@ -104,6 +104,20 @@ class Home extends CI_Controller {
 		$this->load->view('availability', $data);
 	}
 
+	public function availability_requests()
+	{
+		$query = $this->db->query("
+			SELECT tar.name,tar.phone,tar.email,tar.created_date as rdate,ta.title,ta.description,ta.price,ta.property_type,ta.location,ta.contact_number
+			FROM tbl_accomodation_request as tar 
+			INNER JOIN tbl_accomodations as ta ON ta.id = tar.post_id
+			WHERE ta.status = 1 AND tar.status = 1 
+		");
+		$data['list'] = $query->result_array();
+		$this->load->view('availability_requests', $data);
+
+	}
+
+	
 	public function ViewListing()
 	{
 		$i = explode("||", $_GET['id']);

@@ -84,4 +84,28 @@ class Accomodation extends CI_Controller
 			redirect('home/post_listing');
 		}
 	}
+
+	public function Save_request()
+	{
+		// print_r($_POST);
+		$data = [
+			"post_id" => $this->input->post('row_id'),
+			"post_date" => $this->input->post('c_date'),
+			"name" => $this->input->post('name'),
+			"phone" => $this->input->post('phone'),
+			"email" => $this->input->post('email'),
+			"status" => "1",
+			"created_date" => date("Y-m-d H:i:s")
+		];
+
+		$d = $this->db->insert("tbl_accomodation_request", $data);
+		
+		if ($d) {
+			echo "success";
+		} else {
+			echo "error";
+		}
+		
+	}
+	
 }

@@ -90,7 +90,8 @@
 
   <nav>
     <div class="tabs">
-  <div class = "tab"><a href="<? echo base_url('home/availability') ?>"><b>Availability</b></a></div>
+      <div class = "tab"><a href="<? echo base_url('home/availability') ?>"><b>Availability</b></a></div>
+      <div class = "tab"><a href="<? echo base_url('home/availability_requests') ?>"><b>Available Requests</b></a></div>
       <div class="tab"><a href="<? echo base_url('home/post_listing') ?>"><b>Post Listing</b></a></div>
       <div class="tab"><a href="<? echo base_url('home/help') ?>"><b>Help</b></a></div>
     </div>
@@ -101,6 +102,8 @@
     <img src="https://www.pngitem.com/pimgs/m/151-1510456_home-construction-clipart-png-property-house-logo-png.png" alt="Display Image" class="display-image">
     <p class="display-description"> Browse listings, Apply online, Post listings and more...</p>
   </div>
+
+  
 
 </div>
 <!-- ======= Footer ======= -->

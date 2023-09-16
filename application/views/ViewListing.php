@@ -1,6 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
   <title>Property Details</title>
   <style>
     body {
@@ -42,7 +48,53 @@
   </style>
 </head>
 <body>
-  
+
+<div class="container">
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Request for property</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+              <div class="col-md-4">
+              <div class="form-group">
+                <lable>Name<span style="color:red">*</span></lable>
+                <input type="text" class="form-control form-control-sm name" id="name">
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="form-group">
+                <lable>Phone<span style="color:red">*</span></lable>
+                <input type="text" class="form-control form-control-sm" id="phone">
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="form-group">
+                <lable>Email</lable>
+                <input type="text" class="form-control form-control-sm" id="email">
+              </div>
+            </div>
+            <input type="hidden" id="row_id" name="row_id" class="row_id">
+            <input type="hidden" id="c_date" name="c_date" class="c_date">
+
+            <div class="col-md-2">
+              <div class="form-group">
+              <lable>&nbsp;</lable>
+                <button type="button"  id="request_submit"  class="btn btn-success btn-sm request_submit">Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="property-details">
   <a href="<?php echo base_url()."home"?>" style="float: right;">Back Home</a>
     <?php if(!empty($list)){?>
@@ -55,6 +107,7 @@
         <p><strong>Bathrooms:</strong> <span id="bathrooms"><?php echo $list[0]['bathrooms']; ?></span></p>
         <p><strong>Property Type:</strong> <span id="property-type"><?php echo $list[0]['property_type']; ?></span></p>
         <p><strong>Availability for:</strong> <span id="availability"><?php echo $list[0]['availability_for']; ?></span></p>
+        <button type="button" class="btn btn-info btn-sm" row_id="<?php echo $list[0]['id'];?>" c_date="<?php echo $list[0]['created_date'];?>" id="modal_add">Add Request</button>
         <div class="image-gallery" id="image-gallery">
           <?php 
             if(!empty($list[0]['availability_for'])){
@@ -89,5 +142,56 @@
     
   </div>
 
+</div>
+
+<script>
+  
+  $(document).ready(function() { 
+    $("#modal_add").on("click", function(){
+      var row_id = $(this).attr('row_id');
+      var c_date = $(this).attr('c_date');
+      $("#name").val("");
+      $("#phone").val("");
+      $("#email").val("");
+      $("#row_id").val(row_id);
+      $("#c_date").val(c_date);
+      $("#myModal").modal("show");
+    });
+
+    $("#request_submit").on("click", function(){
+      var row_id = $("#row_id").val();
+      var c_date = $("#c_date").val();
+      var name = $("#name").val();
+      var phone = $("#phone").val();
+      var email = $("#email").val();
+      if(name == "" || phone == ""){
+        alert("Please enter mandatory feilds.")
+      }else{
+        $.ajax({
+          url:"<?php echo base_url("Accomodation/Save_request") ?>",
+          data:{row_id:row_id,name:name,phone:phone,email:email,c_date:c_date},
+          type:"post",
+          
+          success:function(res){
+            // alert(res)
+            if(res == "success"){
+              alert("Request raised successfully.")
+            }else{
+              alert("Something went wrong try again later.")
+            }
+            $("#myModal").modal("hide");
+          }
+        });
+      }
+    });
+
+    
+  });
+</script>
+
 </body>
 </html>
+
+
+
+
