@@ -13,13 +13,10 @@
   <link href="<? echo base_url() ?>assets/img/favicon.png" rel="icon">
   <link href="<? echo base_url() ?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
+  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-  <link href="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.css" rel="stylesheet">
-  <script src="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.js"></script>
-
 
   <!-- Google Fonts -->
   <link
@@ -38,8 +35,6 @@
   <!-- Template Main CSS File -->
   <link href="<? echo base_url() ?>assets/css/style.css" rel="stylesheet">
 
-
-
   <!-- =======================================================
   * Template Name: Arsha
   * Updated: Mar 10 2023 with Bootstrap v5.2.3
@@ -50,28 +45,9 @@
 </head>
 
 <body>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
-        </div>
-        <div class="modal-body">
-          <p>This is a large modal.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
 
   <!-- ======= Header ======= -->
-  <header id="header" >
+  <header id="header" class="fixed-top ">
     <div class="container-fluid d-flex align-items-center">
 
       <h1 class="logo mx-auto"><img src="<? echo base_url() ?>assets/img/IMG-1.png"><a href="<? echo base_url() ?>">Expats Hub</a></h1>
@@ -130,4 +106,3 @@
 
     </div>
   </header><!-- End Header -->
-             

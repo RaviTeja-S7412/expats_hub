@@ -1,27 +1,8 @@
 ﻿<? $this->load->view('includes/header') ?>
-      <!-- End Header -->
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-
+      
   <style>
         .row {
-          margin-top: 80px; /* Adjust the value as needed */
+          /* margin-top: 80px; Adjust the value as needed */
         }
       </style>
   <style>
@@ -43,7 +24,7 @@
     }
     
     .mentor-buttons {
-      margin-top: 1.5rem;
+      /* margin-top: 1.5rem; */
     }
     
     .mentor-btn {
@@ -71,18 +52,9 @@
       margin-top: 0;
     }
     
-    .footer {
-      background-color: #343a40;
-      color: #fff;
-      padding: 1rem 0;
-    }
-    
-    .footer p {
-      margin: 0;
-    }
   </style>
 
-  <main>
+  <main style="margin-top: 70px;">
     <section class="jumbotron text-center">
       <div class="container">
         <b><h1 class="display-4 row">Welcome to the Mentor Page</b></h1>

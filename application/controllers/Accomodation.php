@@ -35,7 +35,7 @@ class Accomodation extends CI_Controller
 			}
 		}
 
-
+		$video = "";
 
 		if ($_FILES["video"]["name"] != '') {
 			$output = '';

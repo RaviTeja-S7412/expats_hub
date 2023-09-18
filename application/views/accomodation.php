@@ -17,7 +17,7 @@
     header {
       background-color: #333;
       color: #fff;
-      padding: 20px;
+      /* padding: 20px; */
     }
 
     footer {

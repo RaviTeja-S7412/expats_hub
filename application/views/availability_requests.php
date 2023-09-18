@@ -50,16 +50,7 @@
       margin-top: 50px; /* Adjust the value as needed */
     }
   </style>
-  <div class="content">
-    <!-- Content goes here -->
-  </div>
-  <!-- <div class="scrolling-images"> -->
-    <!-- <a href = "https://www.opgforestcove.com/"><img src="https://cdngeneralcf.rentcafe.com/dmslivecafe/3/1182987/Logo%20Good.JPG?crop=(0,0,300,169)&cropxunits=300&cropyunits=169&quality=85" alt="Image 1" width = "250" height = "200"><div class="image-text">Orion Property Group</div></a>
-    <a href = "https://shirleysrealty.com/"><img src="https://media.merchantcircle.com/9883251/1606764023.37-3365f30b2144c810d6abe11f313454fd_medium.png" alt="Image 2" width = "200" height = "200"><div class="image-text">Shirley's Reality,LTD.</div></a>
-    <a href = "https://propertymanage.biz/u42275/rentals/listings"><img src="https://rtd4.com/thumb_primary.php?p=525845&v=1554229836&cf_cache=true" alt="Image 3" width = "200" height = "200"><div class="image-text">Sri Four LLC</div></a>
-   -->
-  <!-- </div> -->
-  <div class="container">
+  <div class="container" style="margin-top: 120px;">
  
   <h2 align="center"><centre>Request Listings</centre></h2>
   <table id="example" class="table table-striped table-bordered" style="width:100%">

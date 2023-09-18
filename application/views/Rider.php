@@ -92,7 +92,7 @@
   </div>
 
   <div class="driver-image">
-    <img src="Rider.jpg" alt="Ride">
+    <img src="<? echo base_url() ?>assets/img/Rider.jpg" alt="Ride">
   </div>
 
   <script>
