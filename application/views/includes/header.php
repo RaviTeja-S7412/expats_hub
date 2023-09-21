@@ -53,14 +53,34 @@
       <h1 class="logo mx-auto"><img src="<? echo base_url() ?>assets/img/IMG-1.png"><a href="<? echo base_url() ?>">Expats Hub</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+ <?php $a = $this->uri->segment(2);
+ $a1= "";$a2= "";$a3= "";$a4= "";$a5= "";$a5= "";
+ if($a == ""){
+  $a1= "active";
+ }else if($a == "about_us"){
+  $a2= "active";
+ }
+ else if($a == "accomodation"){
+  $a3= "active";
+ }
+ else if($a == "transportation"){
+  $a4= "active";
+ }
+ else if($a == "mentor"){
+  $a5= "active";
+ }
+ else if($a == "rules"){
+  $a6= "active";
+ }
 
+ ?>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="<? echo base_url() ?>">Home</a></li>
-          <li><a class="nav-link scrollto" href="<? echo base_url('home/about_us') ?>">About Us</a></li>
-          <li><a class="nav-link scrollto" href="<? echo base_url('home/accomodation') ?>">Accommodation</a></li>
-          <li><a class="nav-link   scrollto" href="<? echo base_url('home/transportation') ?>">Transportation</a></li>
-          <li><a class="nav-link scrollto" href="<? echo base_url('home/mentor') ?>">Guidence</a></li>
+          <li><a class="nav-link scrollto <?php echo $a1;?>" href="<? echo base_url() ?>">Home</a></li>
+          <li><a class="nav-link scrollto <?php echo $a2;?>" href="<? echo base_url('home/about_us') ?>">About Us</a></li>
+          <li><a class="nav-link scrollto <?php echo $a3;?>" href="<? echo base_url('home/accomodation') ?>">Accommodation</a></li>
+          <li><a class="nav-link   scrollto <?php echo $a4;?>" href="<? echo base_url('home/transportation') ?>">Transportation</a></li>
+          <li><a class="nav-link scrollto <?php echo $a5;?>" href="<? echo base_url('home/mentor') ?>">Guidence</a></li>
           <!--  <li class="dropdown"><a href="#"><span>Rules & Regulation</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
@@ -78,7 +98,7 @@
               <li><a href="#">Drop Down 4</a></li>
             </ul>
           </li> -->
-          <li><a class="nav-link scrollto" href="<? echo base_url('home/') ?>rules">Rules & Regulation</a></li>
+          <li><a class="nav-link scrollto  <?php echo $a6;?>" href="<? echo base_url('home/') ?>rules">Rules & Regulation</a></li>
           <li><a class="nav-link scrollto" href="#contact">
               <input type="text" class="form-control pl-3" placeholder="Search">
             </a>

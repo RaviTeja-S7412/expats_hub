@@ -107,7 +107,7 @@
         <p><strong>Bathrooms:</strong> <span id="bathrooms"><?php echo $list[0]['bathrooms']; ?></span></p>
         <p><strong>Property Type:</strong> <span id="property-type"><?php echo $list[0]['property_type']; ?></span></p>
         <p><strong>Availability for:</strong> <span id="availability"><?php echo $list[0]['availability_for']; ?></span></p>
-        <button type="button" class="btn btn-info btn-sm" row_id="<?php echo $list[0]['id'];?>" c_date="<?php echo $list[0]['created_date'];?>" id="modal_add">Add Request</button>
+        <p align="center"><button type="button" class="btn btn-info btn-sm" row_id="<?php echo $list[0]['id'];?>" c_date="<?php echo $list[0]['created_date'];?>" id="modal_add">Request Property</button></p>
         <div class="image-gallery" id="image-gallery">
           <?php 
             if(!empty($list[0]['availability_for'])){
