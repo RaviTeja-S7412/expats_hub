@@ -60,16 +60,16 @@
       <h1>Rides</h1>
     </div>
     <div class="button-container">
-      <!-- <button class="button" onclick="giveARide()">  <img class="button-icon" src="<? echo base_url('assets/img/') ?>Driver1.jpg" height="150" alt="Give a Ride Icon" ><div class="= "image-text">POST A RIDE</div>
+      <button class="button" onclick="giveARide()">  <img class="button-icon" src="<? echo base_url('assets/img/') ?>Driver1.jpg" height="150" alt="Give a Ride Icon" ><div class="= "image-text">POST A RIDE</div>
           </button>
       <span class="divider"></span>
       <button class="button" onclick="wantARide()"> <img class="button-icon" src="<? echo base_url('assets/img/') ?>pass.jpg" height="150" alt="Want a Ride Icon" ><div class="= "image-text">BOOK A RIDE</div>
-          </button> -->
-          <button class="button" >  <img class="button-icon" src="<? echo base_url('assets/img/') ?>Driver1.jpg" height="150" alt="Give a Ride Icon" ><div class="= "image-text">POST A RIDE</div>
+          </button>
+          <!-- <button class="button" >  <img class="button-icon" src="<? echo base_url('assets/img/') ?>Driver1.jpg" height="150" alt="Give a Ride Icon" ><div class="= "image-text">POST A RIDE</div>
           </button>
       <span class="divider"></span>
       <button class="button" > <img class="button-icon" src="<? echo base_url('assets/img/') ?>pass.jpg" height="150" alt="Want a Ride Icon" ><div class="= "image-text">BOOK A RIDE</div>
-          </button>
+          </button> -->
     </div>
 
     <div id="giveRideContent" class="content" style="display: none; height: 200px">
