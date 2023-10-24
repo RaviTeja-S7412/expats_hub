@@ -10,6 +10,7 @@ class Accomodation extends CI_Controller
 		// print_r($_FILES);
 		// exit;
 
+		$this->secure->checkLogin();
 		$multiImg = [];
 		$this->load->library('upload');
 
@@ -87,6 +88,7 @@ class Accomodation extends CI_Controller
 
 	public function Save_request()
 	{
+		$this->secure->checkLogin();
 		// print_r($_POST);
 		$data = [
 			"post_id" => $this->input->post('row_id'),

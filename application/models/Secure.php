@@ -12,6 +12,13 @@ class Secure extends CI_Model
 		parent::__construct();
 	}
 
+	public function checkLogin()
+	{
+		if(!$this->session->userdata('user_id')){
+			redirect('home/login');
+		}
+	}
+
 	public function generateCaptcha()
 	{
 

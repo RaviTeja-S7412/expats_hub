@@ -21,6 +21,7 @@ class Home extends CI_Controller {
 	 */
 	public function index()
 	{
+		$this->secure->checkLogin();
 		$query = $this->db->query("SELECT * FROM `tbl_accomodations` where status ='1'");
 		$data['accomodations'] = $query->result_array();
 
@@ -46,11 +47,19 @@ class Home extends CI_Controller {
 
 	public function accomodation()
 	{
+		$this->secure->checkLogin();
 		$this->load->view('accomodation');
+	}
+
+	public function rides()
+	{
+		$this->secure->checkLogin();
+		$this->load->view('post_book_rides');
 	}
 
 	public function insertRide()
 	{
+		$this->secure->checkLogin();
 		// print_r($_POST);
 		$data = array(
 			'name' => $this->input->post('name'),
@@ -74,6 +83,7 @@ class Home extends CI_Controller {
 
 	public function passenger_()
 	{
+		$this->secure->checkLogin();
 		// print_r($_POST);
 		$data = array(
 			'name' => $this->input->post('name'),
@@ -99,6 +109,7 @@ class Home extends CI_Controller {
 	
 	public function availability()
 	{
+		$this->secure->checkLogin();
 		$query = $this->db->query("SELECT * FROM `tbl_accomodations`");
 		$data['list'] = $query->result_array();
 		$this->load->view('availability', $data);
@@ -106,6 +117,7 @@ class Home extends CI_Controller {
 
 	public function availability_requests()
 	{
+		$this->secure->checkLogin();
 		$query = $this->db->query("
 			SELECT tar.name,tar.phone,tar.email,tar.created_date as rdate,ta.title,ta.description,ta.price,ta.property_type,ta.location,ta.contact_number
 			FROM tbl_accomodation_request as tar 
@@ -120,6 +132,7 @@ class Home extends CI_Controller {
 	
 	public function ViewListing()
 	{
+		$this->secure->checkLogin();
 		$i = explode("||", $_GET['id']);
 		if($i[1] == ""){
 			$tbl = "tbl_accomodations";
@@ -138,6 +151,7 @@ class Home extends CI_Controller {
 
 	public function post_listing()
 	{
+		$this->secure->checkLogin();
 		$this->load->view('PostListing');
 	}
 
@@ -148,14 +162,17 @@ class Home extends CI_Controller {
 
 	public function transportation()
 	{
+		$this->secure->checkLogin();
 		$this->load->view('rides');
 	}
 	public function rider()
 	{
+		$this->secure->checkLogin();
 		$this->load->view('Rider');
 	}
 	public function passenger()
 	{
+		$this->secure->checkLogin();
 		$this->load->view('passenger');
 	}
 	public function rules()

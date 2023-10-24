@@ -54,11 +54,39 @@
     #footer{
       left: 0 !important;
     }
+    nav {
+     
+     padding: 10px;
+     text-align: left;
+   }
+
+   .tabs {
+     display: flex;
+     justify-content: space-between;
+     max-width: 600px;
+     margin: 0 auto;
+   }
+
+   .tab {
+     padding: 10px 20px;
+     background-color: #ccc;
+     color: #333;
+     cursor: pointer;
+   }
+
+   .tab:hover {
+     background-color: #ddd;
+   }
+
   </style>
   <div class="container">
-    <div class="content" style="margin-top: 70px;">
-      <h1>Rides</h1>
+  <nav style="margin-top: 80px;">
+    <div class="tabs">
+      <div class = "tab"><a href="<? echo base_url('home/rides') ?>"><b>Rides</b></a></div>
+      <div class = "tab"><a href="<? echo base_url('home/transportation') ?>"><b>Post/Book Ride</b></a></div>
     </div>
+
+  </nav>
     <div class="button-container">
       <button class="button" onclick="giveARide()">  <img class="button-icon" src="<? echo base_url('assets/img/') ?>Driver1.jpg" height="150" alt="Give a Ride Icon" ><div class="= "image-text">POST A RIDE</div>
           </button>
