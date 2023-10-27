@@ -83,3 +83,6 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+define('SENDGRID_KEY', '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');
+define('FROM_EMAIL', 'nukalakasiviswanath@gmail.com');

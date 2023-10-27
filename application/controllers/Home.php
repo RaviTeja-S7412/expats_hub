@@ -222,13 +222,13 @@ class Home extends CI_Controller {
 		$otp = random_string('numeric', 6);
 		$this->db->where("email",$email)->update("tbl_users",["otp"=>$otp]);
 
-		$ufrom = new SendGrid\Email("Expats Hub", "vengalaraoyeluri@gmail.com");
+		$ufrom = new SendGrid\Email("Expats Hub", FROM_EMAIL);
 		$usubject = "Expats Hub: Email Verification";
 		$uto = new SendGrid\Email("Expats Hub",$email);
 
 		$ucontent = new SendGrid\Content("text/html","<div>OTP is: $otp</div>");
 		$umail = new SendGrid\Mail($ufrom, $usubject, $uto, $ucontent);
-		$usg = new \SendGrid('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');
+		$usg = new \SendGrid(SENDGRID_KEY);
 		$uresponse = $usg->client->mail()->send()->post($umail);
 
 		echo json_encode(["status"=>200, "email"=>$email, "message"=>"Please enter otp shared to your email id."]);
@@ -286,13 +286,13 @@ class Home extends CI_Controller {
 
 		if($d){
 
-			$ufrom = new SendGrid\Email("Expats Hub", "vengalaraoyeluri@gmail.com");
+			$ufrom = new SendGrid\Email("Expats Hub", FROM_EMAIL);
 			$usubject = "Expats Hub: Email Verification";
 			$uto = new SendGrid\Email("Expats Hub",$email);
 
 			$ucontent = new SendGrid\Content("text/html","<div>OTP is: $otp</div>");
 			$umail = new SendGrid\Mail($ufrom, $usubject, $uto, $ucontent);
-			$usg = new \SendGrid('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');
+			$usg = new \SendGrid(SENDGRID_KEY);
 			$uresponse = $usg->client->mail()->send()->post($umail);
 
 			echo json_encode(["status"=>200, "user_id"=> $lid, "message"=>"Please activate your account by verifying your email address with OTP."]);
